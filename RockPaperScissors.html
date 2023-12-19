@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock, Paper, Scissors</title>
+    </head>
+    <body>
+        <h1>Rock, Paper, Scissors</h1><hr>
+
+        <button onclick="
+            bot = getBotChoice();
+            result = `You selected Rock\n`;
+            result += `The computer selected ` + bot + `\n`;
+            if(bot == 'Rock')
+                result += `It's a tie!`;
+            else if(bot == 'Paper')
+                result += `You lose...`;
+            else 
+                result += `You win!`;
+
+            alert(result);
+        ">Rock</button>
+
+        <button onclick="
+            bot = getBotChoice();
+            result = `You selected Paper\n`;
+            result += `The computer selected ` + bot + `\n`;
+            if(bot == 'Rock')
+                result += `You win!`;
+            else if(bot == 'Paper')
+                result += `It's a tie!`;
+            else 
+                result += `You lose...`;
+
+            alert(result);
+        ">Paper</button>
+
+        <button onclick="
+            bot = getBotChoice();
+            result = `You selected Scissors\n`;
+            result += `The computer selected ` + bot + `\n`;
+            if(bot == 'Rock')
+                result += `You lose...`;
+            else if(bot == 'Paper')
+                result += `You win!`;
+            else 
+                result += `It's a tie!`;
+
+            alert(result);
+        ">Scissors</button>
+
+        <script>
+            function getBotChoice(){
+                var random_num = (Math.random()*3);
+                if(random_num > 2)
+                    return 'Rock'
+                else if(random_num > 1)
+                    return 'Paper'
+                else
+                    return 'Scissors'
+            }
+        </script>
+    </body>
+</html>
