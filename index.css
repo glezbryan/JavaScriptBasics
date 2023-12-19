@@ -1,16 +1,31 @@
-p{
-    display: block;
-    border-style: thin;
-    background-color: lightgrey;
-    padding: 10px;
-    width: 50%;
-}
-.red_button{
-    background-color: red;
+h1{
     color: white;
-    border-radius: 15%;
+    background-color: maroon;
+    padding: 5px;
+    display: inline;
 }
-.yellow_button{
-    background-color: yellow;
-    border-radius: 15%;
+hr{
+    color: maroon;
+}
+main{
+    padding: 10px;
+}
+body{
+    background-color:rgb(56, 55, 55);
+    padding: 5px;
+}
+
+a{
+    background-color: maroon;
+    color: white;
+    border-color: white;
+    display:block;
+    text-align: center;
+    width: 100px;
+    margin: 5px;
+    padding: 5px;
+    border: 5px;
+    background-origin:border-box;
+    text-decoration-line:none;
+    
 }
