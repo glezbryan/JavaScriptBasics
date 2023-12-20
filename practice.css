@@ -1,3 +1,10 @@
+body{
+    background-color:rgb(56, 55, 55);
+}
+h1{
+    color: white;
+}
+
 p{
     display: block;
     border-style: thin;

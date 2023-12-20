@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Objects</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <script>
+            let product = {
+                name: 'socks',
+                price: 1090
+            };
+            console.log(product);
+            console.log(product.name);
+            console.log(product.price);
+            product.name = 'Cotton socks'
+
+            console.log(product)
+
+            product.newProperty = true;
+            console.log(product);
+
+            delete product.newProperty;
+            console.log(product);
+
+            let product2 = {
+                name: 'shrit',
+                'delivery-time': '1 day',
+                rating: {
+                    stars: 4.5,
+                    count: 87
+                },
+                fun: function function1(){
+                    console.log('function inside object')
+                }
+            };
+
+
+            console.log(product2);
+            console.log(product2.name);//dot notation
+            console.log(product2['name']); //bracket notation
+            console.log(product2['delivery-time']);//braket notation helps here. usually the '-' would be subration but it is just a string in this case.
+            console.log(product2.rating.count);
+            product2.fun();
+        </script>        
+    </body>
+</html>

@@ -9,57 +9,77 @@
     <body>
         <h1>Rock, Paper, Scissors</h1><hr>
 
-        <button onclick="
-            bot = getBotChoice();
-            result = `You selected Rock\n`;
-            result += `The computer selected ` + bot + `\n`;
-            if(bot == 'Rock')
-                result += `It's a tie!`;
-            else if(bot == 'Paper')
-                result += `You lose...`;
-            else 
-                result += `You win!`;
+        <button onclick="playGame('Rock')">Rock</button>
 
-            alert(result);
-        ">Rock</button>
+        <button onclick="playGame('Paper')">Paper</button>
+
+        <button onclick="playGame('Scissors')">Scissors</button>
 
         <button onclick="
-            bot = getBotChoice();
-            result = `You selected Paper\n`;
-            result += `The computer selected ` + bot + `\n`;
-            if(bot == 'Rock')
-                result += `You win!`;
-            else if(bot == 'Paper')
-                result += `It's a tie!`;
-            else 
-                result += `You lose...`;
-
-            alert(result);
-        ">Paper</button>
-
-        <button onclick="
-            bot = getBotChoice();
-            result = `You selected Scissors\n`;
-            result += `The computer selected ` + bot + `\n`;
-            if(bot == 'Rock')
-                result += `You lose...`;
-            else if(bot == 'Paper')
-                result += `You win!`;
-            else 
-                result += `It's a tie!`;
-
-            alert(result);
-        ">Scissors</button>
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+        ">Reset Score</button>
 
         <script>
+            let score = {
+                wins:0,
+                losses:0,
+                ties:0
+            };
+
             function getBotChoice(){
                 var random_num = (Math.random()*3);
                 if(random_num > 2)
-                    return 'Rock'
+                    return 'Rock';
                 else if(random_num > 1)
-                    return 'Paper'
+                    return 'Paper';
                 else
-                    return 'Scissors'
+                    return 'Scissors';
+            }
+
+            function playGame(User){
+                bot = getBotChoice();
+                result = '';
+                switch (User) {
+                    case 'Rock':
+                        if(bot == 'Rock')
+                            result = `It's a tie!`;
+                        else if(bot == 'Paper')
+                            result =`You lose...`;
+                        else 
+                            result =   `You win!`;
+                        break;
+                    case 'Paper':
+                        if(bot == 'Rock')
+                            result = `You win!`;
+                        else if(bot == 'Paper')
+                            result = `It's a tie!`;
+                        else 
+                            result = `You lose...`;
+                        break;
+                    case 'Scissors':
+                        if(bot == 'Rock')
+                            result = `You lose...`;
+                        else if(bot == 'Paper')
+                            result = `You win!`;
+                        else 
+                            result = `It's a tie!`;
+                        break;
+                
+                    default:
+                        return `ERROR: Invalid parameters`
+                        break;
+                }
+
+                if(result === `You win!`)
+                    score.wins++;
+                else if(result === `You lose...`)
+                    score.losses++;
+                else
+                    score.ties++;
+
+                alert(` You selected ${User}.\n The computer selected ${bot}.\n ${result}\n Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
             }
         </script>
     </body>
