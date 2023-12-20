@@ -44,6 +44,11 @@
             console.log(product2['delivery-time']);//braket notation helps here. usually the '-' would be subration but it is just a string in this case.
             console.log(product2.rating.count);
             product2.fun();
+
+            //json - java script object notation
+            console.log(JSON.stringify(product2));// will return a string but not the fuction since functions are not supported as a json object
+            let json_string = JSON.stringify(product2);
+            console.log(JSON.parse(json_string));
         </script>        
     </body>
 </html>
