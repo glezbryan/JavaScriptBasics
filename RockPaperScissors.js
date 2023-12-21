@@ -14,37 +14,37 @@ function updateScore(){
 function getBotChoice(){
     var random_num = (Math.random()*3);
     if(random_num > 2)
-        return 'Rock';
+        return 'rock';
     else if(random_num > 1)
-        return 'Paper';
+        return 'paper';
     else
-        return 'Scissors';
+        return 'scissors';
 }
 
 function playGame(User){
     bot = getBotChoice();
     result = '';
     switch (User) {
-        case 'Rock':
-            if(bot == 'Rock')
+        case 'rock':
+            if(bot == 'rock')
                 result = `It's a tie!`;
-            else if(bot == 'Paper')
+            else if(bot == 'paper')
                 result =`You lose...`;
             else 
                 result =   `You win!`;
             break;
-        case 'Paper':
-            if(bot == 'Rock')
+        case 'paper':
+            if(bot == 'rock')
                 result = `You win!`;
-            else if(bot == 'Paper')
+            else if(bot == 'paper')
                 result = `It's a tie!`;
             else 
                 result = `You lose...`;
             break;
-        case 'Scissors':
-            if(bot == 'Rock')
+        case 'scissors':
+            if(bot == 'rock')
                 result = `You lose...`;
-            else if(bot == 'Paper')
+            else if(bot == 'paper')
                 result = `You win!`;
             else 
                 result = `It's a tie!`;
