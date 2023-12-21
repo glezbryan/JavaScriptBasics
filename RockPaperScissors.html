@@ -10,27 +10,33 @@
         <h1>Rock, Paper, Scissors</h1><hr>
 
         <button onclick="playGame('Rock')">Rock</button>
-
         <button onclick="playGame('Paper')">Paper</button>
-
         <button onclick="playGame('Scissors')">Scissors</button>
+
+        <p class="js-result"></p>
+        <p class="js-moves"></p>
+        <p class="js-score"></p>
 
         <button onclick="
             score.wins = 0;
             score.losses = 0;
             score.ties = 0;
             localStorage.removeItem('score');
+            updateScore();
         ">Reset Score</button>
 
         <script>
-            let score = JSON.parse(localStorage.getItem('score'));
+            let score = JSON.parse(localStorage.getItem('score')) || {
+                            wins: 0,
+                            losses: 0,
+                            ties:0
+                        };
+            updateScore();
+            
 
-            if(!score){
-                score = {
-                    wins: 0,
-                    losses: 0,
-                    ties:0
-                };
+            function updateScore(){
+                document.querySelector('.js-score')
+                .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
             }
 
             function getBotChoice(){
@@ -86,7 +92,11 @@
 
                 localStorage.setItem('score', JSON.stringify(score))
 
-                alert(` You selected ${User}.\n The computer selected ${bot}.\n ${result}\n Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+                updateScore();
+                document.querySelector('.js-result')
+                    .innerHTML = result;
+                document.querySelector('.js-moves')
+                    .innerHTML = ` You selected ${User} - The computer selected ${bot}.`
             }
         </script>
     </body>

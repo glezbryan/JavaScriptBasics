@@ -11,6 +11,11 @@ h1{
     display: block;
     margin: 0;
 }
+
+p{
+    color: white;
+}
+
 main{
     padding: 5px;
 }

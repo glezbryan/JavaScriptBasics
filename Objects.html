@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <h1>Objects</h1><hr>
         <script>
             let product = {
                 name: 'socks',
@@ -49,6 +50,33 @@
             console.log(JSON.stringify(product2));// will return a string but not the fuction since functions are not supported as a json object
             let json_string = JSON.stringify(product2);
             console.log(JSON.parse(json_string));
+
+            //Objects are just references
+            //const also prevets us from changing the "pointer" but we can still modify the stuff the object points to since they are not constant
+            const product3 = {
+                message: 'hello'
+            };
+
+            let product4 = product3;
+            console.log(product4.message);
+            product3.message = 'Changing the message in product 3 will affect product 4 becuase they point to the same place in memory'
+            console.log(product4.message);
+
+            product3.message = 'test';
+            const product5 = {
+                message: 'test',
+                price: 799
+            };
+
+            console.log(product3 === product5); //false, the are "The same object with the same values" but the references are the same
+            console.log(product3 === product4); //true because they both point to the same place
+
+            //const message = object5.message
+            //since the name of the variable and the data is the same, there is this shortcut:
+            const {message, price} = product5;
+            console.log(message);
+            console.log(price);
+
         </script>        
     </body>
 </html>
