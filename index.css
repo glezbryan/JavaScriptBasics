@@ -1,7 +1,9 @@
 body{
     background-color:rgb(56, 55, 55);
+    color: white;
     padding: 5px;
     margin: 0;
+    font-family: Arial;
 }
 
 h1{
@@ -31,7 +33,7 @@ a{
     border: 5px;
     background-origin:border-box;
     text-decoration-line:none;
-    
+    cursor: pointer;
 }
 
 button{
@@ -44,5 +46,5 @@ button{
     border: 5px;
     background-origin:border-box;
     text-decoration-line:none;
-    
+    cursor: pointer;
 }
