@@ -11,21 +11,23 @@
         <a href="index.html" class="title">Tic Tac Toe</a><hr>
         <main>
             <div>
-                <button class="grid top_left"       onclick="play('.top_left')"      onmouseover="setHover('.top_left');"        onmouseleave="unsetHover('.top_left');">.</button>
-                <button class="grid top_center"     onclick="play('.top_center')"    onmouseover="setHover('.top_center');"      onmouseleave="unsetHover('.top_center');">.</button>
-                <button class="grid top_right"      onclick="play('.top_right')"     onmouseover="setHover('.top_right');"       onmouseleave="unsetHover('.top_right');">.</button><br>
+                <button class="grid top_left"       onclick="play(0)"      onmouseover="setHover('.top_left');"        onmouseleave="unsetHover('.top_left');">.</button>
+                <button class="grid top_center"     onclick="play(1)"    onmouseover="setHover('.top_center');"      onmouseleave="unsetHover('.top_center');">.</button>
+                <button class="grid top_right"      onclick="play(2)"     onmouseover="setHover('.top_right');"       onmouseleave="unsetHover('.top_right');">.</button><br>
             </div>
             <div>
-                <button class="grid center_left"    onclick="play('.center_left')"   onmouseover="setHover('.center_left');"     onmouseleave="unsetHover('.center_left');">.</button>
-                <button class="grid center_center"  onclick="play('.center_center')" onmouseover="setHover('.center_center');"   onmouseleave="unsetHover('.center_center');">.</button>
-                <button class="grid center_right"   onclick="play('.center_right')"  onmouseover="setHover('.center_right');"    onmouseleave="unsetHover('.center_right');">.</button><br>
+                <button class="grid center_left"    onclick="play(3)"   onmouseover="setHover('.center_left');"     onmouseleave="unsetHover('.center_left');">.</button>
+                <button class="grid center_center"  onclick="play(4)" onmouseover="setHover('.center_center');"   onmouseleave="unsetHover('.center_center');">.</button>
+                <button class="grid center_right"   onclick="play(5)"  onmouseover="setHover('.center_right');"    onmouseleave="unsetHover('.center_right');">.</button><br>
             </div>
             <div>
-                <button class="grid bottom_left"    onclick="play('.bottom_left')"   onmouseover="setHover('.bottom_left');"     onmouseleave="unsetHover('.bottom_left');">.</button>
-                <button class="grid bottom_center"  onclick="play('.bottom_center')" onmouseover="setHover('.bottom_center');"   onmouseleave="unsetHover('.bottom_center');">.</button>
-                <button class="grid bottom_right"   onclick="play('.bottom_right')"  onmouseover="setHover('.bottom_right');"    onmouseleave="unsetHover('.bottom_right');">.</button><br>
+                <button class="grid bottom_left"    onclick="play(6)"   onmouseover="setHover('.bottom_left');"     onmouseleave="unsetHover('.bottom_left');">.</button>
+                <button class="grid bottom_center"  onclick="play(7)" onmouseover="setHover('.bottom_center');"   onmouseleave="unsetHover('.bottom_center');">.</button>
+                <button class="grid bottom_right"   onclick="play(8)"  onmouseover="setHover('.bottom_right');"    onmouseleave="unsetHover('.bottom_right');">.</button><br>
             </div>
             <p class="score"></p>
+            <button class="play_again">Play Again?</button>
+            <button class="reset_score"></button>
         </main>
         <script src="TicTacToe.js"></script>
     </body>
