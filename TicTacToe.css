@@ -53,3 +53,7 @@ div{
 .hover{
     background-color: gray;
 }
+
+.win{
+    background-color: green;
+}
