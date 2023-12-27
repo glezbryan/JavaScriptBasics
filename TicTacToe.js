@@ -21,6 +21,7 @@ let avaliable_grid = [document.querySelector('.top_left'),
 function updateScore(){
     document.querySelector('.score')
         .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+    localStorage.setItem('score', JSON.stringify(score));
 }
 
 function setHover(box_index){
@@ -116,7 +117,6 @@ function play(box_index){
         document.querySelector('.result').innerHTML = 'You Win!';
         score.wins++;
         updateScore();
-        localStorage.setItem('score', JSON.stringify(score))
         return;
     }
 
@@ -129,14 +129,35 @@ function play(box_index){
             document.querySelector('.result').innerHTML = 'You Lose...';
             score.losses++;
             updateScore();
-            localStorage.setItem('score', JSON.stringify(score))
         }
     }
     else{
         document.querySelector('.result').innerHTML = 'Its a tie';
         score.ties++;
         updateScore();
-        localStorage.setItem('score', JSON.stringify(score))
     }
 
+}
+
+function playAgain(){
+    avaliable_grid = [document.querySelector('.top_left'),
+                    document.querySelector('.top_center'),
+                    document.querySelector('.top_right'),
+                    document.querySelector('.center_left'),
+                    document.querySelector('.center_center'),
+                    document.querySelector('.center_right'),
+                    document.querySelector('.bottom_left'),
+                    document.querySelector('.bottom_center'),
+                    document.querySelector('.bottom_right')];
+    document.querySelector('.result').innerHTML = '';
+    for(let i=0; i<9; i++){
+        grid[i].classList.remove('selected');
+        grid[i].innerHTML='.';
+    }
+}
+function resetScore(){
+    score.wins = 0;
+    score.loses = 0;
+    score.ties = 0;
+    updateScore();
 }
