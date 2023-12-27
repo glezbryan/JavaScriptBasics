@@ -154,6 +154,7 @@ function playAgain(){
     document.querySelector('.result').innerHTML = '';
     for(let i=0; i<9; i++){
         grid[i].classList.remove('selected');
+        grid[i].classList.remove('win');
         grid[i].innerHTML='.';
     }
 }
